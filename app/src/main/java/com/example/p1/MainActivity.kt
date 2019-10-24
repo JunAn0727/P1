@@ -23,7 +23,14 @@ class MainActivity : AppCompatActivity() {
         val rollButton: Button = findViewById(R.id.roll_button)
         rollButton.setOnClickListener { rollDice() }
         countup_button.setOnClickListener{ countUp() }
-
+        reset_button.setOnClickListener {
+            val resultText: TextView = findViewById(R.id.result_text)
+            val resultText2: TextView = findViewById(R.id.result_text2)
+            val resultText3: TextView = findViewById(R.id.result_text3)
+            resultText.text = "0"
+            resultText2.text = "0"
+            resultText3.text = "0"
+        }
     }
 
     private fun countUp() {
@@ -58,11 +65,5 @@ class MainActivity : AppCompatActivity() {
         resultText2.text = randomInt2.toString()
         resultText3.text = randomInt3.toString()
 
-        val sumButton: Button = findViewById(R.id.reset_button)
-        reset_button.setOnClickListener {
-            resultText.text = "0"
-            resultText2.text = "0"
-            resultText3.text = "0"
-        }
     }
 }
